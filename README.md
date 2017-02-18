@@ -8,6 +8,7 @@ Wordsmith is an api where it accepts a string based value and manuiplates the st
 
 The following functions are available.
 
+* Wordsmith.GetAcrostic(value);
 * WordSmith.ContainsVowels(value));
 * WordSmith.GetLongestWord(value));
 * WordSmith.GetTopLongestWords(val, (optional) max = 1)
