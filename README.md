@@ -18,7 +18,7 @@ The following functions are available.
 * WordSmith.FindRepeatedWords(val)
 
 # Counter
-Counter counts stuff within a string value like counting the number of characters with no spaces, counting the number of vowels, counting the number of lower/upper case characters.
+Counter does sum calculations on a string value like counting white spaces, vowels or lower/upper case characters.
 
 The following functions are available.
 
@@ -38,6 +38,11 @@ The following functions are available.
 The library has a special extension where you can check if a string value is a vowel or contains any vowels, without having to use the WordSmith directly. 
 
 When you add "using Wordy;" to the head of your code, all string based values will automatically have a IsVowel/ContainsVowels extensions. 
+
+The following extensions are available
+* IsVowel();
+* ContainsVowels();
+* ContainsConsonants();
 
 Example
 
