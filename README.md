@@ -1,4 +1,4 @@
-# wordy
+# Wordy
 A .Net library that reads and analyse your text strings like reversing text, count the number of vowels or punctations. It does other stuff, too. The most useless library I ever created.
 
 The library offers two APIs; WordSmith and Counter.
@@ -33,3 +33,33 @@ The following functions are available.
 * Counter.CountWhiteSpaces(value));
 * Counter.CountSymbols(value));
 * Counter.CountSeparators(value));
+
+# Extensions
+The library has a special extension where you can check if a string value is a vowel or contains any vowels.
+
+Just add "using Wordy;" at the head of your code file (if using CSharp).
+
+Example
+
+using System;
+using System.Collections.Generic;
+using Wordy;
+
+static void testVowels()
+{
+	items = new List<string>()
+	{
+		"Flyby",
+		"Apples",
+		"Station",
+		"Sky"
+	};
+
+	foreach (var s in items)
+	{
+		Console.WriteLine("{0} {1} contain a vowel", s, (Wordy.api.WordSmith.ContainsVowels(s)) ? "does" : "does not");
+	}
+
+}
+
+
