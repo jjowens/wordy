@@ -60,6 +60,7 @@ namespace TestConsole
             List<string> lst = new List<string>()
             {
                 "Flyby",
+                "A fox jumped high",
                 "Humpty Dumpty sat on a wall,Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!",
                 "Itsy Bitsy spider climbing up the spout, Down came the rain and washed the spider out, Out came the sun and dried up all the rain, Now Itsy Bitsy spider went up the spout again!",
                 "Red sky at night, Sailor's delight; Red sky at morning, Sailor's warning."

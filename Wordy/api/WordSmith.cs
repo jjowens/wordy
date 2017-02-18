@@ -40,6 +40,11 @@ namespace Wordy.api
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Reverses string value e.g. ABC > CBA
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string ReverseText(string value)
         {
             StringBuilder sb = new StringBuilder();
@@ -52,6 +57,11 @@ namespace Wordy.api
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Inverts case sensitvity of character in string e.g. Apple > aPPLE
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string InvertCase(string value)
         {
             StringBuilder sb = new StringBuilder();
@@ -75,6 +85,11 @@ namespace Wordy.api
             return sb.ToString();
         }
 
+        /// <summary>
+        /// It reverses each word in a string without reversing the whole text e.g. A fox jumped high > hgih depmuj xof A 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string ReverseWords(string value)
         {
             StringBuilder sb = new StringBuilder();
@@ -96,6 +111,11 @@ namespace Wordy.api
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Gets the longest word from string. It checks the length of each word in string.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string GetLongestWord(string value)
         {
             string temp = string.Empty;
@@ -107,6 +127,12 @@ namespace Wordy.api
             return temp;
         }
 
+        /// <summary>
+        /// Gets the top nth longest words from string. It checks the length of each word in string and returns a number of words. Default max is 1.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static string GetTopLongestWords(string value, int max=1)
         {
             string temp = string.Empty;
@@ -122,6 +148,11 @@ namespace Wordy.api
             return temp;
         }
 
+        /// <summary>
+        /// The string value will be read from end to beginning e.g. A fox jumped high > high jumped fox A 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string ReverseWording(string value)
         {
             string temp = string.Empty;
@@ -132,6 +163,11 @@ namespace Wordy.api
             return temp;
         }
 
+        /// <summary>
+        /// Find all words in string that are repeated more than once.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static string FindRepeatedWords(string value)
         {
             List<string> items = value.Split(' ').ToList();
@@ -156,6 +192,11 @@ namespace Wordy.api
             return results;
         }
 
+        /// <summary>
+        /// Checks if string contains Vowels
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool ContainsVowels(string value)
         {
             string temp = value.Trim().ToLower();
@@ -163,6 +204,11 @@ namespace Wordy.api
             return (Counter.CountVowels(temp) > 0); ;
         }
 
+        /// <summary>
+        /// Checks if string contains Consonants
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool ContainsConsonants(string value)
         {
             string temp = value.Trim().ToLower();
@@ -170,12 +216,6 @@ namespace Wordy.api
             return (Counter.CountConsonants(temp) > 0); ;
         }
 
-        public static string ToAcrynom(string value)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            return sb.ToString();
-        }
 
     }
 }
