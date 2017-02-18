@@ -11,7 +11,7 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            //testStrings();
+            testStrings();
             Console.WriteLine("");
             testVowels();
 
@@ -24,7 +24,6 @@ namespace TestConsole
             string val = " Itsy Bitsy spider climbing up the spout, Down came the rain and washed the spider out, Out came the sun and dried up all the rain, Now Itsy Bitsy spider went up the spout again! ";
 
             string results = Wordy.api.WordSmith.GetAcrostic(val);
-
 
             Console.WriteLine(results);
         }
