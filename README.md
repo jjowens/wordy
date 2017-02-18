@@ -35,7 +35,7 @@ The following functions are available.
 * Counter.CountSeparators(value));
 
 # Extensions
-The library has a special extension where you can check if a string value is a vowel or contains any vowels, without having to use the WordSmith directly. 
+The library has a special extension where you can check if a string value is a vowel or contains any vowels, without having to use the WordSmith api directly. 
 
 When you add "using Wordy;" to the head of your code, all string based values will automatically have a IsVowel/ContainsVowels extensions. 
 
