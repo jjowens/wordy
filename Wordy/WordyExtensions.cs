@@ -27,12 +27,12 @@ namespace Wordy
 
         public static bool ContainsVowels(this string value)
         {
-            //string temp = value.Trim().ToLower();
+            return api.WordSmith.ContainsVowels(value);
+        }
 
-            //var total = (from c in value where value.ContainsVowels() select c).Count();
-
-            //return (total > 0); ;
-            return value.ContainsVowels();
+        public static bool ContainsConsonants(this string value)
+        {
+            return api.WordSmith.ContainsConsonants(value);
         }
 
 

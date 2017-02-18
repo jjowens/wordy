@@ -8,7 +8,6 @@ namespace Wordy.api
 {
     public class Counter
     {
-        //private static  List<char> _vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
 
         public static int CountVowels(string value)
         {
@@ -16,7 +15,6 @@ namespace Wordy.api
 
             string temp = value.ToLower().Trim();
 
-            //total = temp.Where(x => _vowels.Contains(x)).Count();
             total = temp.Where(x => x.IsVowel()).Count();
 
             return total;
@@ -28,7 +26,6 @@ namespace Wordy.api
 
             string temp = value.ToLower().Trim();
 
-            //total = temp.Where(x => !_vowels.Contains(x)).Count();
             total = temp.Where(x => !x.IsVowel()).Count();
 
             return total;

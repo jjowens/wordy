@@ -163,6 +163,13 @@ namespace Wordy.api
             return (Counter.CountVowels(temp) > 0); ;
         }
 
+        public static bool ContainsConsonants(string value)
+        {
+            string temp = value.Trim().ToLower();
+
+            return (Counter.CountConsonants(temp) > 0); ;
+        }
+
         public static string ToAcrynom(string value)
         {
             StringBuilder sb = new StringBuilder();

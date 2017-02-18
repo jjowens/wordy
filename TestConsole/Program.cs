@@ -11,7 +11,7 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            testStrings();
+            //testStrings();
             Console.WriteLine("");
             testVowels();
 
@@ -39,6 +39,19 @@ namespace TestConsole
             foreach (var s in items)
             {
                 Console.WriteLine("{0} {1} a vowel", s, (s.IsVowel()) ? "is" : "is not");
+            }
+
+            items = new List<string>()
+            {
+                "Flyby",
+                "Apples",
+                "Station",
+                "Sky"
+            };
+
+            foreach (var s in items)
+            {
+                Console.WriteLine("{0} {1} contain a vowel", s, (s.ContainsVowels()) ? "does" : "does not");
             }
 
         }
@@ -83,6 +96,8 @@ namespace TestConsole
             Console.WriteLine("Reverse Text: {0}", Wordy.api.WordSmith.ReverseText(val));
             Console.WriteLine("Reverse Words: {0}", Wordy.api.WordSmith.ReverseWords(val));
             Console.WriteLine("Reverse Wording: {0}", Wordy.api.WordSmith.ReverseWording(val));
+            Console.WriteLine("Get Top Longest: {0}", Wordy.api.WordSmith.GetTopLongestWords(val, 3));
+            Console.WriteLine("Find Most Repeated Words: {0}", Wordy.api.WordSmith.FindRepeatedWords(val));
 
             Console.WriteLine("");
 
