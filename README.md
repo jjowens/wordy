@@ -48,6 +48,16 @@ using Wordy;
 
 static void testVowels()
 {
+	List<string> items = new List<string>()
+	{
+		"a", "b", "c", "d", "e", "i", "o", "u"
+	};
+
+	foreach (var s in items)
+	{
+		Console.WriteLine("{0} {1} a vowel", s, (s.IsVowel()) ? "is" : "is not");
+	}
+	
 	items = new List<string>()
 	{
 		"Flyby",
@@ -60,7 +70,7 @@ static void testVowels()
 	{
 		Console.WriteLine("{0} {1} contain a vowel", 
 		s, 
-		(Wordy.api.WordSmith.ContainsVowels(s)) ? "does" : "does not");
+		(s.ContainsVowels()) ? "does" : "does not");
 	}
 
 }
