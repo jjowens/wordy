@@ -4,7 +4,7 @@ A .Net library that reads and analyse your text strings like reversing text, cou
 The library offers two APIs; WordSmith and Counter.
 
 # Wordsmith
-Wordsmith is an api where it accepts a string based value and manuiplates the strings such as reversing words one by one or reversing the whole text. It also can be used to check if the text contains any vowels or consonants.
+Wordsmith is an api where it accepts a string based value and manipulates the strings such as reversing words one by one or reversing the whole text. It also can be used to check if the text contains any vowels or consonants.
 
 The following functions are available.
 
