@@ -57,7 +57,9 @@ static void testVowels()
 
 	foreach (var s in items)
 	{
-		Console.WriteLine("{0} {1} contain a vowel", s, (Wordy.api.WordSmith.ContainsVowels(s)) ? "does" : "does not");
+		Console.WriteLine("{0} {1} contain a vowel", 
+		s, 
+		(Wordy.api.WordSmith.ContainsVowels(s)) ? "does" : "does not");
 	}
 
 }
