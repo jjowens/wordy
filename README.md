@@ -41,6 +41,7 @@ Just add "using Wordy;" at the head of your code file (if using CSharp).
 
 Example
 
+```C#
 using System;
 using System.Collections.Generic;
 using Wordy;
@@ -63,5 +64,6 @@ static void testVowels()
 	}
 
 }
+```
 
 
