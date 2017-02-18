@@ -10,11 +10,11 @@ The following functions are available.
 
 * WordSmith.ContainsVowels(value));
 * WordSmith.GetLongestWord(value));
+* WordSmith.GetTopLongestWords(val, (optional) max = 1)
 * WordSmith.InvertCase(value));
 * WordSmith.ReverseText(value));
 * WordSmith.ReverseWords(value));
 * WordSmith.ReverseWording(value));
-* WordSmith.GetTopLongestWords(val, (optional) max = 1)
 * WordSmith.FindRepeatedWords(val)
 
 # Counter
