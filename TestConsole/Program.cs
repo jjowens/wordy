@@ -17,6 +17,7 @@ namespace TestConsole
 
             Console.ReadLine();
 
+
         }
 
         static void GetAcrostic()
@@ -98,6 +99,16 @@ namespace TestConsole
             Console.WriteLine("Reverse Wording: {0}", Wordy.api.WordSmith.ReverseWording(val));
             Console.WriteLine("Get Top Longest: {0}", Wordy.api.WordSmith.GetTopLongestWords(val, 3));
             Console.WriteLine("Find Most Repeated Words: {0}", Wordy.api.WordSmith.FindRepeatedWords(val));
+
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            dict = Wordy.api.WordSmith.FindRepeatedWordsWithCount(val);
+
+            Console.WriteLine("Find Most Repeated Words with count:");
+
+            foreach(var item in dict)
+            {
+                Console.WriteLine("{0} = {1}", item.Key, item.Value);
+            }
 
             Console.WriteLine("");
 

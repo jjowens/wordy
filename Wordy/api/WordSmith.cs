@@ -192,6 +192,30 @@ namespace Wordy.api
             return results;
         }
 
+        public static Dictionary<string, int> FindRepeatedWordsWithCount(string value)
+        {
+            List<string> items = value.Split(' ').ToList();
+            List<string> temp = new List<string>();
+            Dictionary<string, int> results = new Dictionary<string, int>();
+
+            foreach (var item in items)
+            {
+                if (results.ContainsKey(item)) continue;
+
+                int total = items.Where(x => x.ToLower() == item.ToLower()).Count();
+
+                if (total > 1)
+                {
+                    if (!results.ContainsKey(item))
+                    {
+                        results.Add(item, total);
+                    }
+                }
+            }
+
+            return results;
+        }
+
         /// <summary>
         /// Checks if string contains Vowels
         /// </summary>
