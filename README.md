@@ -1,7 +1,7 @@
 # Wordy
 A .Net library that reads and analyse your text strings like reversing text, count the number of vowels or punctations. It does other stuff, too. The most useless library I ever created.
 
-The library offers two APIs; WordSmith and Counter.
+The library offers a few APIs; WordSmith, Counter and WordSmithReader.
 
 # Wordsmith
 Wordsmith is an api where it accepts a string based value and manipulates the strings such as reversing words one by one or reversing the whole text. It also can be used to check if the text contains any vowels or consonants.
