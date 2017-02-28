@@ -118,7 +118,6 @@ namespace TestConsole
 
         static void testWordSmithReader()
         {
-            //string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rhymes", "HumptyDumpty.txt");
 
             string[] files = System.IO.Directory.GetFiles(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rhymes"), "*.*");
 
