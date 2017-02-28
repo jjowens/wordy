@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="api\Counter.cs" />
     <Compile Include="api\WordSmith.cs" />
+    <Compile Include="api\WordSmithReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordyExtensions.cs" />
   </ItemGroup>

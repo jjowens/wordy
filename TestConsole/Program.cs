@@ -11,9 +11,9 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            testStrings();
-            Console.WriteLine("");
-            testVowels();
+            //testStrings();
+            //testVowels();
+            testWordSmithReader();
 
             Console.ReadLine();
 
@@ -54,6 +54,7 @@ namespace TestConsole
                 Console.WriteLine("{0} {1} contain a vowel", s, (s.ContainsVowels()) ? "does" : "does not");
             }
 
+            Console.WriteLine("");
         }
 
         static void testStrings()
@@ -72,6 +73,7 @@ namespace TestConsole
                 GenericTest(s);
             }
 
+            Console.WriteLine("");
         }
 
         static void GenericTest(string val)
@@ -112,6 +114,38 @@ namespace TestConsole
 
             Console.WriteLine("");
 
+        }
+
+        static void testWordSmithReader()
+        {
+            //string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rhymes", "HumptyDumpty.txt");
+
+            string[] files = System.IO.Directory.GetFiles(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rhymes"), "*.*");
+
+            foreach (var filePath in files)
+            {
+                string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+
+                Console.WriteLine(fileName);
+                Console.WriteLine("==================");
+
+                var results = Wordy.api.WordSmithReader.ReadFile(filePath,
+                Wordy.api.WordSmithReader.ReadSwitch.LongestWord,
+                Wordy.api.WordSmithReader.ReadSwitch.GetFirstLetterOfEachLine);
+
+                foreach (var r in results)
+                {
+                    Console.WriteLine("{0}", r.Key);
+
+                    foreach (var item in r.Value)
+                    {
+                        Console.WriteLine("Line {0}: {1}", item.LineNumber, item.Value);
+                    }
+                }
+
+            };
+
+            
         }
     }
 }
