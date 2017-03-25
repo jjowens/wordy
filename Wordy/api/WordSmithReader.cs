@@ -16,7 +16,7 @@ namespace Wordy.api
             CountConsonants,
             GetAcrostic,
             LongestWord,
-            GetFirstLetterOfEachLine,
+            GetFirstLetterOfEachLine
         }
 
         public class Stat
