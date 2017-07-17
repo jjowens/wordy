@@ -11,10 +11,12 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            testStrings();
-            Console.WriteLine("");
-            testVowels();
+            //testStrings();
+            //testVowels();
+            testWordSmithReader();
+            //RemoveVowels();
 
+            Console.WriteLine("Completed...");
             Console.ReadLine();
 
 
@@ -54,6 +56,7 @@ namespace TestConsole
                 Console.WriteLine("{0} {1} contain a vowel", s, (s.ContainsVowels()) ? "does" : "does not");
             }
 
+            Console.WriteLine("");
         }
 
         static void testStrings()
@@ -72,6 +75,7 @@ namespace TestConsole
                 GenericTest(s);
             }
 
+            Console.WriteLine("");
         }
 
         static void GenericTest(string val)
@@ -111,6 +115,60 @@ namespace TestConsole
             }
 
             Console.WriteLine("");
+
+        }
+
+        static void testWordSmithReader()
+        {
+
+            string[] files = System.IO.Directory.GetFiles(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rhymes"), "*.*");
+
+            foreach (var filePath in files)
+            {
+                string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+
+                Console.WriteLine(fileName);
+                Console.WriteLine("==================");
+
+                var results = Wordy.api.WordSmithReader.ReadFile(filePath,
+                Wordy.api.WordSmithReader.ReadSwitch.LongestWord,
+                Wordy.api.WordSmithReader.ReadSwitch.GetFirstLetterOfEachLine, 
+                Wordy.api.WordSmithReader.ReadSwitch.RemoveVowels);
+
+                foreach (var r in results)
+                {
+                    Console.WriteLine("{0}", r.Key);
+
+                    foreach (var item in r.Value)
+                    {
+                        Console.WriteLine("Line {0}: {1}", item.LineNumber, item.Value);
+                    }
+                }
+
+            };
+
+            
+        }
+
+        static void RemoveVowels()
+        {
+            List<string> lst = new List<string>()
+            {
+                "Flyby",
+                "A fox jumped high",
+                "Humpty Dumpty sat on a wall,Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!",
+                "Itsy Bitsy spider climbing up the spout, Down came the rain and washed the spider out, Out came the sun and dried up all the rain, Now Itsy Bitsy spider went up the spout again!",
+                "Red sky at night, Sailor's delight; Red sky at morning, Sailor's warning."
+            };
+
+            foreach (var s in lst)
+            {
+                Console.WriteLine("Remove Vowels");
+                Console.WriteLine(Wordy.api.WordSmith.RemoveVowels(s));
+                Console.WriteLine("");
+                Console.WriteLine("Remove Consonants");
+                Console.WriteLine(Wordy.api.WordSmith.RemoveConsonants(s));
+            }
 
         }
     }

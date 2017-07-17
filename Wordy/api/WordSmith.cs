@@ -240,6 +240,65 @@ namespace Wordy.api
             return (Counter.CountConsonants(temp) > 0); ;
         }
 
+        /// <summary>
+        /// Get first letter from value.
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string GetFirstLetter(string val)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<string> split = new List<string>()
+            {
+                " "
+            };
 
+            var items = val.Split(split.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            string firstLetter = string.Empty;
+
+            if (items.Any())
+            {
+                firstLetter = items[0].Trim().Substring(0,1);
+            }
+
+            return firstLetter;
+        }
+
+        /// <summary>
+        /// Remove vowels
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string RemoveVowels(string val)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            List<char> vowels = Wordy.WordyExtensions.GetListOfVowels();
+
+            var temp = val.Where(x => !vowels.Contains(x)).Select(y => y).ToArray();
+
+            string line = string.Join("", temp);
+
+            return line;
+        }
+
+        /// <summary>
+        /// Remove Consonants
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string RemoveConsonants(string val)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            List<char> vowels = Wordy.WordyExtensions.GetListOfVowels();
+
+            var temp = val.Where(x => vowels.Contains(x)).Select(y => y).ToArray();
+
+            string line = string.Join("", temp);
+
+            return line;
+        }
     }
 }

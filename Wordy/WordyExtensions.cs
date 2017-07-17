@@ -35,6 +35,11 @@ namespace Wordy
             return api.WordSmith.ContainsConsonants(value);
         }
 
+        public static List<char> GetListOfVowels()
+        {
+            return _vowels;
+        }
+
 
     }
 }
