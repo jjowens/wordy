@@ -264,5 +264,41 @@ namespace Wordy.api
 
             return firstLetter;
         }
+
+        /// <summary>
+        /// Remove vowels
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string RemoveVowels(string val)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            List<char> vowels = Wordy.WordyExtensions.GetListOfVowels();
+
+            var temp = val.Where(x => !vowels.Contains(x)).Select(y => y).ToArray();
+
+            string line = string.Join("", temp);
+
+            return line;
+        }
+
+        /// <summary>
+        /// Remove Consonants
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static string RemoveConsonants(string val)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            List<char> vowels = Wordy.WordyExtensions.GetListOfVowels();
+
+            var temp = val.Where(x => vowels.Contains(x)).Select(y => y).ToArray();
+
+            string line = string.Join("", temp);
+
+            return line;
+        }
     }
 }

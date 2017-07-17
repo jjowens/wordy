@@ -14,7 +14,9 @@ namespace TestConsole
             //testStrings();
             //testVowels();
             testWordSmithReader();
+            //RemoveVowels();
 
+            Console.WriteLine("Completed...");
             Console.ReadLine();
 
 
@@ -130,7 +132,8 @@ namespace TestConsole
 
                 var results = Wordy.api.WordSmithReader.ReadFile(filePath,
                 Wordy.api.WordSmithReader.ReadSwitch.LongestWord,
-                Wordy.api.WordSmithReader.ReadSwitch.GetFirstLetterOfEachLine);
+                Wordy.api.WordSmithReader.ReadSwitch.GetFirstLetterOfEachLine, 
+                Wordy.api.WordSmithReader.ReadSwitch.RemoveVowels);
 
                 foreach (var r in results)
                 {
@@ -145,6 +148,28 @@ namespace TestConsole
             };
 
             
+        }
+
+        static void RemoveVowels()
+        {
+            List<string> lst = new List<string>()
+            {
+                "Flyby",
+                "A fox jumped high",
+                "Humpty Dumpty sat on a wall,Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!",
+                "Itsy Bitsy spider climbing up the spout, Down came the rain and washed the spider out, Out came the sun and dried up all the rain, Now Itsy Bitsy spider went up the spout again!",
+                "Red sky at night, Sailor's delight; Red sky at morning, Sailor's warning."
+            };
+
+            foreach (var s in lst)
+            {
+                Console.WriteLine("Remove Vowels");
+                Console.WriteLine(Wordy.api.WordSmith.RemoveVowels(s));
+                Console.WriteLine("");
+                Console.WriteLine("Remove Consonants");
+                Console.WriteLine(Wordy.api.WordSmith.RemoveConsonants(s));
+            }
+
         }
     }
 }
