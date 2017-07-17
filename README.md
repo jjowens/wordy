@@ -1,5 +1,5 @@
 # Wordy
-A .Net library that reads and analyse your text strings like reversing text, count the number of vowels or punctations. It does other stuff, too. The most useless library I ever created.
+A .Net library that reads and analyse your text strings like reversing text, count the number of vowels or punctations. I created this library for fun.
 
 The library offers a few APIs; WordSmith, Counter and WordSmithReader.
 
@@ -17,6 +17,8 @@ The following functions are available. Not an exhaustive list
 * WordSmith.ReverseWords(value));
 * WordSmith.ReverseWording(value));
 * WordSmith.FindRepeatedWords(val)
+* WordSmith.RemoveVowels(val)
+* WordSmith.RemoveConsonants(val)
 
 # Counter
 Counter does sum calculations on a string value like counting white spaces, vowels or lower/upper case characters.
