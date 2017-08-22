@@ -300,5 +300,80 @@ namespace Wordy.api
 
             return line;
         }
+
+        /// <summary>
+        /// Convert words to length e.g. "A fox jumped over the fence" becomes "1 3 6 4 3 4". 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static IEnumerable<int> ConvertWordsToLength(string val)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<string> split = new List<string>()
+            {
+                " "
+            };
+
+            var items = val.Split(split.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            IEnumerable<int> results = (from c in items select c.Length);
+
+            return results;
+        }
+
+        public enum LengthOperator
+        {
+            EqualsTo,
+            NotEqualsTo,
+            LessThan,
+            LessThanAndEqualTo,
+            MoreThan,
+            MoreThanAndEqualTo
+        }
+
+        /// <summary>
+        /// GetWordsWithLength 
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public static IEnumerable<string> GetWordsWithLength(string val, int requiredLegnth, LengthOperator lenOperator)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<string> split = new List<string>()
+            {
+                " "
+            };
+
+            var items = val.Split(split.ToArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var q = (from c in items select c);
+
+            switch (lenOperator)
+            {
+                case LengthOperator.EqualsTo:
+                    q = (from c in q where c.Length == requiredLegnth select c);
+                    break;
+                case LengthOperator.NotEqualsTo:
+                    q = (from c in q where c.Length != requiredLegnth select c);
+                    break;
+                case LengthOperator.LessThan:
+                    q = (from c in q where c.Length < requiredLegnth select c);
+                    break;
+                case LengthOperator.LessThanAndEqualTo:
+                    q = (from c in q where c.Length <= requiredLegnth select c);
+                    break;
+                case LengthOperator.MoreThan:
+                    q = (from c in q where c.Length > requiredLegnth select c);
+                    break;
+                case LengthOperator.MoreThanAndEqualTo:
+                    q = (from c in q where c.Length >= requiredLegnth select c);
+                    break;
+                default:
+                    q = (from c in q select c);
+                    break;
+            }
+
+            return q;
+        }
     }
 }

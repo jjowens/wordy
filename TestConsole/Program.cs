@@ -9,17 +9,36 @@ namespace TestConsole
 {
     class Program
     {
+        private static List<string> _lst = null;
+
         static void Main(string[] args)
         {
+            preloadList();
+
             //testStrings();
             //testVowels();
-            testWordSmithReader();
+            //testWordSmithReader();
             //RemoveVowels();
+
+            //GetWordsWithLength();
+            ConvertWordsToLength();
 
             Console.WriteLine("Completed...");
             Console.ReadLine();
 
 
+        }
+
+        static void preloadList()
+        {
+            _lst = new List<string>()
+            {
+                "Flyby",
+                "A fox jumped high",
+                "Humpty Dumpty sat on a wall, Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!",
+                "Itsy Bitsy spider climbing up the spout, Down came the rain and washed the spider out, Out came the sun and dried up all the rain, Now Itsy Bitsy spider went up the spout again!",
+                "Red sky at night, Sailor's delight; Red sky at morning, Sailor's warning."
+            };
         }
 
         static void GetAcrostic()
@@ -61,16 +80,7 @@ namespace TestConsole
 
         static void testStrings()
         {
-            List<string> lst = new List<string>()
-            {
-                "Flyby",
-                "A fox jumped high",
-                "Humpty Dumpty sat on a wall,Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!",
-                "Itsy Bitsy spider climbing up the spout, Down came the rain and washed the spider out, Out came the sun and dried up all the rain, Now Itsy Bitsy spider went up the spout again!",
-                "Red sky at night, Sailor's delight; Red sky at morning, Sailor's warning."
-            };
-
-            foreach (var s in lst)
+            foreach (var s in _lst)
             {
                 GenericTest(s);
             }
@@ -171,5 +181,81 @@ namespace TestConsole
             }
 
         }
+
+        static void GetWordsWithLength()
+        {
+            // GET STRING FROM LIST
+            string val = "Humpty Dumpty sat on a wall, Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!";
+
+            List<string> items = new List<string>();
+
+            // GET WORDS WITH EXACTLY 5 CHARACTERS LONG
+            items = Wordy.api.WordSmith.GetWordsWithLength(val, 5, Wordy.api.WordSmith.LengthOperator.EqualsTo).ToList();
+
+            Console.WriteLine("Words with exactly 5 characters long");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+            // GET WORDS THAT IS NOT 5 CHARACTERS LONG
+            items = Wordy.api.WordSmith.GetWordsWithLength(val, 5, Wordy.api.WordSmith.LengthOperator.NotEqualsTo).ToList();
+
+            Console.WriteLine("Words not exactly 5 characters long");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+            // GET WORDS WITH LESS THAN 5 CHARACTERS LONG
+            items = Wordy.api.WordSmith.GetWordsWithLength(val, 5, Wordy.api.WordSmith.LengthOperator.LessThan).ToList();
+
+            Console.WriteLine("Words with less than 5 characters long");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+            // GET WORDS WITH LESS THAN AND EQUALS TO 5 CHARACTERS LONG
+            items = Wordy.api.WordSmith.GetWordsWithLength(val, 5, Wordy.api.WordSmith.LengthOperator.LessThanAndEqualTo).ToList();
+
+            Console.WriteLine("Words with less than and equal to 5 characters long");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+            // GET WORDS WITH MORE THAN 5 CHARACTERS LONG
+            items = Wordy.api.WordSmith.GetWordsWithLength(val, 5, Wordy.api.WordSmith.LengthOperator.MoreThan).ToList();
+
+            Console.WriteLine("Words with more than 5 characters long");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+            // GET WORDS WITH MORE THAN AND EQUALS TO 5 CHARACTERS LONG
+            items = Wordy.api.WordSmith.GetWordsWithLength(val, 5, Wordy.api.WordSmith.LengthOperator.MoreThanAndEqualTo).ToList();
+
+            Console.WriteLine("Words with more than and equal to 5 characters long");
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+        static void ConvertWordsToLength()
+        {
+            // GET STRING FROM LIST
+            string val = "Humpty Dumpty sat on a wall, Humpty Dumpty had a great fall. All the King's horses, And all the King's men Couldn't put Humpty together again!";
+
+            var results = Wordy.api.WordSmith.ConvertWordsToLength(val);
+
+            Console.WriteLine("ConvertWordsTolength");
+            Console.WriteLine(string.Join(", ", results));
+            Console.WriteLine(results.Sum());
+        }
+
     }
 }
