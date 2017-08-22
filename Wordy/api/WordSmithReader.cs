@@ -18,7 +18,8 @@ namespace Wordy.api
             LongestWord,
             GetFirstLetterOfEachLine,
             RemoveVowels,
-            RemoveConsonants
+            RemoveConsonants,
+            CovertWordsToLength
         }
 
         public class Stat
@@ -84,6 +85,9 @@ namespace Wordy.api
                                 break;
                             case ReadSwitch.RemoveConsonants:
                                 val = WordSmith.RemoveVowels(line);
+                                break;
+                            case ReadSwitch.CovertWordsToLength:
+                                val = WordSmith.ConvertWordsToLength(line);
                                 break;
                         }
 
