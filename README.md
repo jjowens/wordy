@@ -20,7 +20,7 @@ The following functions are available. Not an exhaustive list
 * WordSmith.RemoveVowels(val)
 * WordSmith.RemoveConsonants(val)
 * GetWordsWithLength(string val, int requiredLegnth, LengthOperator lenOperator)
-** LengthOperator - EqualsTo, NotEqualsTo, LessThan, LessThanAndEqualTo, MoreThan, MoreThanAndEqualTo
+* * LengthOperator - EqualsTo, NotEqualsTo, LessThan, LessThanAndEqualTo, MoreThan, MoreThanAndEqualTo
 
 # Counter
 Counter does sum calculations on a string value like counting white spaces, vowels or lower/upper case characters.
