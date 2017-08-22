@@ -19,6 +19,7 @@ The following functions are available. Not an exhaustive list
 * WordSmith.FindRepeatedWords(val)
 * WordSmith.RemoveVowels(val)
 * WordSmith.RemoveConsonants(val)
+* ConvertWordsToLength(val)
 * GetWordsWithLength(string val, int requiredLegnth, LengthOperator lenOperator)
 * * LengthOperator - EqualsTo, NotEqualsTo, LessThan, LessThanAndEqualTo, MoreThan, MoreThanAndEqualTo
 
